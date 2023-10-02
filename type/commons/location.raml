@@ -1,0 +1,128 @@
+#%RAML 1.0 DataType
+
+type: array
+items:
+  type: object
+  properties:
+    ipAddress:
+      type: string
+      description: "Dirección IP del dispositivo desde el que se está ejecutando el onboarding."
+      required: false
+    locationDescription:
+      type: string
+      description: "Detalles de la locación"
+      required: false
+    country:
+      type:  !include countryReference.raml
+      required: false
+    city:
+      type:  !include cityReference.raml
+      required: false
+    region:
+      type:  !include region.raml
+      required: false
+    state:
+      type:  !include state.raml
+      required: false
+    longitude:
+      type: string
+      description: "Longitud de geolocalización del usuario."
+      required: false
+    latitude:
+      type: string
+      description: "Latitud de geolocalización del usuario."
+      required: false
+    street:
+      type: object
+      properties:
+        streetName:
+          type: string
+          description: "Nombre de la calle que normalmente acompaña una direcció n."
+          required: false
+        streetCode:
+          type: string
+          description: "Codigo de la calle que normalmente acompaña una direcció n."
+          required: false
+        streetNumber:
+          type: string
+          description: "Numero de la calle que normalmente acompaña una direcció n."
+          required: false
+    neighborhood:
+      type: string
+      description: "Barrio, nombre común (mSubLocality)."
+      required: false
+    postalAddress:
+      type: string
+      description: "Dirección postal."
+      required: false
+    isInvalidAddress:
+      type: boolean
+      description: "Indica si la dirección es válida."
+      required: false
+    emissionDate:
+      type: string
+      description: "Emisión, fecha de registro."
+      required: false
+    locationAddressType:
+      type: string
+      enum:
+      - IP_ADDRESS
+      - DEVICE_ADDRESS
+      - PARTY_ADDRESS
+      - INE_ADDRESS
+      - BIRTH_PLACE
+      description: "'Indica el tipo de direccion' * IP_ADDRESS =  Direccion IP  * DEVICE_ADDRESS = Direccion de un dispositivo * PARTY_ADDRESS = Direccion de una persona * INE_ADDRESS = Direccion retornada por el INE * BIRTH_PLACE = Direccion de Nacimiento"
+      required: false
+    countyDistrict:
+      type:  !include countyDistrict.raml
+      required: false
+    sector:
+      type: string
+      description: Nombre del sector donde se vive.
+      required: false
+    houseNumber:
+      type: string
+      description: Numero de casa
+      required: false
+    couse:
+      type: string
+      description: "Complemento de ubicación (indicación)"
+      required: false
+    stage:
+      type: string
+      description: Etapa
+      required: false
+    lot:
+      type: string
+      description: Lote
+      required: false
+    building:
+      type: string
+      description: Edificio
+      required: false
+    locationReferencePoint:
+      type: string
+      description: Complemento de domicilio.
+      required: false
+    neighborhoodList:
+      type:  !include neighborhoodList.raml
+      required: false
+    isFullAddress:
+      type: boolean
+      description: "Dirección domiciliaria completa."
+      required: false
+    internalHouseNumber:
+      type: string
+      description: "Indica el número interior del domicilio"
+      required: false
+    externalHouseNumber:
+      type: string
+      description: "Indica el número exterior del domicilio"
+      required: false
+    province:
+      type:  !include province.raml
+      required: false
+    postalCode:
+      type: string
+      description: Indica el codigo postal
+      required: false

@@ -1,0 +1,64 @@
+#%RAML 1.0 DataType
+
+type: array
+items:
+  type: object
+  properties:
+    identifier:
+      type: object
+      properties:
+        identifierValue:
+          type: string
+          description: "Especifica el valor único del identificador."
+          required: false
+        issuingAuthority:
+          type: string
+          description: Nombre de la entidad que emite o proporciona el identificador.
+          required: false
+        issuingAuthorityType:
+          type: string
+          description: "Tipo o categoría de la entidad emisora."
+          required: false
+        identifierStartDate:
+          type: date-only
+          description: "Fecha en la que el identificador fue emitido o comenzó a ser válido."
+        identifierEndDate:
+          type: date-only
+          description: "Fecha de expiración o finalización de la validez del identificador."
+        identifierHolderName:
+          type: string
+          description: "Nombre de la persona o entidad que posee o está asociada con el identificador."
+          required: false
+    personIdentificationType:
+      type: string
+      enum:
+      - ClaveUnicaRegistroPoblacion
+      - Codigo Cliente
+      - Registro Federal Contribuyentes
+      - Numero Persona Coppel
+      - Documentos Migratorios De No Emigrantes
+      - Codigo Identificacion
+      - Numero Identificacion
+      - Numero Identificacion Social
+      description: "'Indica el tipo de documento de identidad' * ClaveUnicaRegistroPoblacion =  Clave Unica Registro Poblacion * Codigo Cliente = Codigo Cliente  * Registro Federal Contribuyentes = Registro Federal Contribuyentes * Numero Persona Coppel = Numero Persona Coppel * Documentos Migratorios De No Emigrantes = Documentos Migratorios De No Emigrantes  * Codigo Identificacion = Codigo Identificacion * Numero Identificacion = Numero Identificacion * Numero Identificacion Social = Numero Identificacion Social"
+      required: false
+    file:
+      type: string
+      description: "Archivo relacionado con la identificación."
+      required: false
+    folioDigit:
+      type: string
+      description: "Dígito del folio asociado."
+      required: false
+    provinceDigit:
+      type: string
+      description: "Dígito representativo de la provincia."
+      required: false
+    specialIdentDigit:
+      type: string
+      description: "Dígito especial de identificación."
+      required: false
+    personDocumentType:
+      type: string
+      description: Tipo de documento de la persona.
+      required: false

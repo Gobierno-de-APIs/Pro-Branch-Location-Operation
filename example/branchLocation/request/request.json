@@ -1,0 +1,13 @@
+{
+    "transactionDetails": {
+      "branch": "BRANCH456",
+      "option": "OPTION789",
+      "sequence": "SEQ123"
+    },
+    "productInstanceRecord": {
+      "productInstanceReference": "PRODUCT987"
+    },
+    "partyReference": {
+      "referenceId": "CUSTOMER567"
+    }
+  }

@@ -1,0 +1,9 @@
+{
+  "branchLocation": {
+    "locationBranchReference": "BR123",
+    "locationBranchName": "Main Branch",
+    "locationBranchAddress": "123 Main Street",
+    "locationBranchNeighborhood": "Downtown",
+    "locationBranchEstate": "Stateville"
+  }
+}

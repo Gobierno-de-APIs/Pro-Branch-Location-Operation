@@ -1,0 +1,104 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  identifications:
+    type:  !include identifications.raml
+    required: false
+  personName:
+    type:  !include personName.raml
+    required: false
+  dateOfBirth:
+    type: date-only
+    description: Fecha de nacimiento
+    required: false
+  location:
+    type:  !include location.raml
+    required: false
+  gender:
+    type: string
+    description: "'El género de la persona ' * M = Masculino * F = Femenino"
+    enum:
+    - M
+    - F
+    minLength: 1
+    maxLength: 1
+    required: false
+  status:
+    type: string
+    description: Estado de validacion de un proceso.
+    required: false
+  nationality:
+    type: string
+    description: Nacionalidad del usuario.
+    required: false
+  contactPoint:
+    type:  !include contactPoint.raml
+    required: false
+  identificationDevice:
+    type:  !include identificationDevice.raml
+    required: false
+  customerType:
+    type: string
+    description: Tipo de cliente.
+    required: false
+  referenceId:
+    type: string
+    description: Id del cliente
+    required: false
+  referenceIdCoppel:
+    type: string
+    description: Id Coppel del cliente
+    required: false
+  marketing:
+    type: string
+    description: Marketing
+    required: false
+  profession:
+    type: string
+    description: Actividad profesional del cliente
+    required: false
+  matrimonialRegime:
+    type: string
+    description: "Régimen matrimonial."
+    required: false
+  maritalStatus:
+    type: string
+    description: Estado civil.
+    required: false
+  birthPlace:
+    type:  !include birthPlace.raml
+    required: false
+  personProfile:
+    type:  !include personProfile.raml
+    required: false
+  companyReference:
+    type: string
+    description: Referencia de empresa
+    required: false
+  employeeNumber:
+    type: string
+    description: id de empleado que realizo la transaccion
+    required: false
+  bankBranch:
+    type:  !include bankBranch.raml
+    required: false
+  totalOccupancy:
+    type: number
+    description: "ocupación total"
+    required: false
+  specificActivity:
+    type: string
+    description: actividad especifica
+    required: false
+  economicActivity:
+    type: string
+    description: actividad economica
+    required: false
+  activitySector:
+    type:  !include activitySector.raml
+    required: false
+  dependents:
+    type: string
+    description: dependientes
+    required: false

@@ -1,0 +1,83 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  dateOfBirth:
+    type: number
+    description: Fecha de nacimiento formato timestamp
+    required: false
+  gender:
+    type: string
+    description: "'El género de la persona obtenido de ocr' * M = Masculino* F = Femenino"
+    enum:
+    - M
+    - F
+    minLength: 1
+    maxLength: 1
+    required: false
+  voterKey:
+    type: string
+    description: Clave de elector como se lee de id. Solo para identificaciones mexicanas.
+    minLength: 18
+    maxLength: 18
+    required: false
+  curp:
+    type: string
+    description: ID de formulario de lectura. Solo para identificaciones mexicanas.
+    minLength: 18
+    maxLength: 18
+    required: false
+  ocr:
+    type: string
+    description: "Este campo se lee desde el reverso de la identificación; solo para identificaciones mexicanas"
+    minLength: 13
+    maxLength: 13
+    required: false
+  cic:
+    type: string
+    description: "Este campo se lee desde el reverso de la identificación; solo para identificaciones mexicanas"
+    minLength: 9
+    maxLength: 9
+    required: false
+  emissionNumber:
+    type: string
+    description: "Número de emisión."
+    required: false
+  expireAt:
+    type: string
+    description: Fecha de caducidad.
+    required: false
+  expirationDate:
+    type: number
+    description: "Año de vencimiento de la identificación."
+    required: false
+  issueDate:
+    type: number
+    description: "Año de emisión de la identificación."
+    required: false
+  machineReadZone:
+    type:  !include machineReadZone.raml
+    required: false
+  personName:
+    type:  !include personName.raml
+    required: false
+  registrationDate:
+    type: number
+    description: Fecha de registro
+    required: false
+  dateOfBirthCheckDigit:
+    type: string
+    description: "Dígito de verificación de fecha de nacimiento leído de MRZ."
+    required: false
+  documentNumberCheckDigit:
+    type: string
+    description: "Dígito de verificación del número de documento leído de MRZ."
+    required: false
+  expirationDateCheckDigit:
+    type: string
+    description: "Dígito de verificación de fecha de caducidad leído de MRZ."
+    required: false
+  dateofBirthMrz:
+    type: string
+    description: "Dígito de verificación de fecha de nacimiento leído de MRZ."
+    required: false

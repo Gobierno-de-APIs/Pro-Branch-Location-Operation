@@ -1,0 +1,69 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  profileType:
+    type: string
+    description: Tipo de perfil.
+    required: false
+  residency:
+    type: string
+    description: Lugar de residencia.
+    required: false
+  pepProfile:
+    type:  !include pepProfile.raml
+    required: false
+  partyType:
+    type:  !include partyType.raml
+    required: false
+  activitySector:
+    type:  !include activitySector.raml
+    required: false
+  economicActivity:
+    type:  !include economicActivity.raml
+    required: false
+  segment:
+    type:  !include segment.raml
+    required: false
+  group:
+    type:  !include group.raml
+    required: false
+  subGroup:
+    type:  !include subGroup.raml
+    required: false
+  numberOfDependents:
+    type: number
+    description: "Número de dependientes."
+    required: false
+  guardian:
+    type: string
+    description: "Tutor o guardián."
+    required: false
+  spouse:
+    type: string
+    description: "Cónyuge."
+    required: false
+  burialInsurance:
+    type: string
+    description: Seguro de entierro.
+    required: false
+  educationalLevel:
+    type: string
+    description: Nivel educativo.
+    required: false
+  residencyPlace:
+    type: string
+    description: Lugar de residencia.
+    required: false
+  residencyYear:
+    type: number
+    description: "Año de residencia."
+    required: false
+  propertyName:
+    type: string
+    description: Nombre de la propiedad.
+    required: false
+  mortgage:
+    type: number
+    description: Monto de la hipoteca.
+    required: false

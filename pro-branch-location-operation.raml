@@ -1,0 +1,76 @@
+#%RAML 1.0
+title: Pro Branch Location Operation
+version: 1.0.0
+baseUri: https://${HOST_NAME}/system/channelSpecific/branchLocationOperations
+mediaType:
+  - application/json
+protocols:
+  - HTTPS
+
+uses:
+  common-responses: ../common-responses/common-responses.raml
+  lib: library/library-branch-location-operation.raml
+
+/v1/branchLocation/retrieve:
+  post:
+    headers:
+      consumerRequestId:
+        example: Example
+        type: string
+      token:
+        example: Example
+        type: string
+    description: Operación encargada de obtener información geográfica de las suscursales bancarias.
+    is: [
+
+
+
+
+
+        common-responses.responses200: {typeName: lib.retrieveBranchLocationRs,exampleRs: !include example/branchLocation/response/200.json },
+
+
+
+
+
+
+        common-responses.responses400: {typeName: lib.commonErrorRs,exampleRs: !include example/branchLocation/response/400.json },
+
+
+
+
+
+
+        common-responses.responses401: {typeName: lib.commonErrorRs,exampleRs: !include example/branchLocation/response/401.json },
+
+
+
+
+
+
+        common-responses.responses403: {typeName: lib.commonErrorRs,exampleRs: !include example/branchLocation/response/403.json },
+
+
+
+
+
+
+        common-responses.responses404: {typeName: lib.commonErrorRs,exampleRs: !include example/branchLocation/response/404.json },
+
+
+
+
+
+
+        common-responses.responses408: {typeName: lib.commonErrorRs,exampleRs: !include example/branchLocation/response/408.json },
+
+
+
+
+
+
+        common-responses.responses500: {typeName: lib.commonErrorRs,exampleRs: !include example/branchLocation/response/500.json } ]
+    body:
+      application/json:
+        type: lib.retrieveBranchLocationRq
+        example: !include example/branchLocation/request/request.json
